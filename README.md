@@ -4,7 +4,7 @@ Run [`zizmor`](https://docs.zizmor.sh/) against the current repository's GitHub 
 
 ## Usage
 
-This action checks out the repository internally and runs `zizmor --strict-collection --show-audit-urls=always --min-severity=medium .`, so the job fails on collection errors and on medium-severity or higher findings.
+This action checks out the repository internally and runs `zizmor --config "${{ github.action_path }}/zizmor.yml" --strict-collection --show-audit-urls=always --min-severity=medium .`, so the job fails on collection errors and on medium-severity or higher findings.
 
 ```yaml
 name: GitHub Actions Security Analysis
@@ -32,7 +32,7 @@ jobs:
 
 ## Configuration
 
-`zizmor` will automatically discover a repository-local `zizmor.yml` file. For example:
+This action passes its bundled config file at `${{ github.action_path }}/zizmor.yml` to `zizmor`. The current shared config includes:
 
 ```yaml
 rules:

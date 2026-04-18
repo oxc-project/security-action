@@ -12,4 +12,4 @@ runs:
 
     - name: Run zizmor
       shell: bash
-      run: zizmor --strict-collection --show-audit-urls=always --min-severity=medium .
+      run: zizmor --config "${{ github.action_path }}/zizmor.yml" --strict-collection --show-audit-urls=always --min-severity=medium .
