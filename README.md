@@ -1,10 +1,10 @@
 # security-action
 
-Run [`zizmor`](https://docs.zizmor.sh/) against the current repository's GitHub Actions workflows and upload the results as SARIF to GitHub code scanning.
+Run [`zizmor`](https://docs.zizmor.sh/) against the current repository's GitHub Actions workflows and fail the job when medium-severity or higher findings are present.
 
 ## Usage
 
-This action checks out the repository internally. The job needs `security-events: write` so GitHub can accept the uploaded SARIF results.
+This action checks out the repository internally and runs `zizmor --strict-collection --show-audit-urls=always --min-severity=medium .`, so the job fails on collection errors and on medium-severity or higher findings.
 
 ```yaml
 name: GitHub Actions Security Analysis
@@ -26,8 +26,6 @@ on:
 jobs:
   security:
     runs-on: ubuntu-slim
-    permissions:
-      security-events: write
     steps:
       - uses: oxc-project/security-action@v1
 ```
