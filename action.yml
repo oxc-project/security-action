@@ -8,7 +8,7 @@ runs:
 
     - uses: taiki-e/install-action@0abfcd587b70a713fdaa7fb502c885e2112acb15 # v2.75.7
       with:
-        tool: zizmor
+        tool: zizmor@1.24.1
 
     - name: Run zizmor
       shell: bash
