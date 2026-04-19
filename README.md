@@ -1,10 +1,10 @@
 # security-action
 
-Run [`zizmor`](https://docs.zizmor.sh/) against the current repository's GitHub Actions workflows and fail the job when medium-severity or higher findings are present.
+Run security checks against the current repository. The current check set includes [`zizmor`](https://docs.zizmor.sh/) for GitHub Actions workflows and fails the job when medium-severity or higher findings are present.
 
 ## Usage
 
-This action checks out the repository internally and runs `zizmor --config "${{ github.action_path }}/zizmor.yml" --strict-collection --show-audit-urls=always --min-severity=medium .`, so the job fails on collection errors and on medium-severity or higher findings.
+This action checks out the repository internally and runs the configured security checks. Today, that includes `zizmor --config "${{ github.action_path }}/zizmor.yml" --strict-collection --show-audit-urls=always --min-severity=medium .`, so the job fails on collection errors and on medium-severity or higher findings.
 
 ```yaml
 name: GitHub Actions Security Analysis
@@ -32,7 +32,7 @@ jobs:
 
 ## Configuration
 
-This action passes its bundled config file at `${{ github.action_path }}/zizmor.yml` to `zizmor`. The current shared config includes:
+The zizmor check passes its bundled config file at `${{ github.action_path }}/zizmor.yml` to `zizmor`. The current shared config includes:
 
 ```yaml
 rules:
