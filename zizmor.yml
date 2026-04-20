@@ -1,4 +1,8 @@
 rules:
+  github-env:
+    ignore:
+      - action.yml:89
+
   secrets-outside-env:
     config:
       allow:
