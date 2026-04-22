@@ -22,8 +22,7 @@ yanked = "warn"
 # A list of advisory IDs to ignore. Note that ignored advisories will still
 # output a note when they are encountered.
 ignore = [
-  # Low impact: requires compromising a trusted issuing authority. No fix in stable rustls-webpki yet.
-  "RUSTSEC-2026-0049",
+  # "RUSTSEC-0000-0000",
 ]
 # Threshold for security vulnerabilities, any vulnerability with a CVSS score
 # lower than the range specified will be ignored. Note that ignored advisories
@@ -71,7 +70,11 @@ confidence-threshold = 0.8
 exceptions = [
   # Each entry is the crate and version constraint, and its specific allow
   # list
+  { allow = ["Zlib"], name = "const_format", version = "*" },
+  { allow = ["Zlib"], name = "const_format_proc_macros", version = "*" },
   { allow = ["Zlib"], name = "foldhash", version = "*" },
+  { allow = ["CC0-1.0"], name = "notify", version = "*" },
+  { allow = ["BSD-2-Clause"], name = "syscalls", version = "*" },
 ]
 
 # Some crates don't have (easily) machine readable licensing information,
