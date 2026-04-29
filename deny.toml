@@ -49,16 +49,19 @@ ignore = [
 # [possible values: any SPDX 3.11 short identifier (+ optional exception)].
 allow = [
   "Apache-2.0",
+  "BSD-2-Clause",
   "BSD-3-Clause",
+  "BSL-1.0",
+  "CC0-1.0",
+  "CDLA-Permissive-2.0",
   "ISC",
   "MIT",
   "MIT-0",
   "MPL-2.0",
   "OpenSSL",
-  "Unicode-DFS-2016",
   "Unicode-3.0",
-  "CDLA-Permissive-2.0",
-  "BSL-1.0",
+  "Unicode-DFS-2016",
+  "Zlib",
 ]
 # The confidence threshold for detecting a license from license text.
 # The higher the value, the more closely the license text must be to the
@@ -70,11 +73,6 @@ confidence-threshold = 0.8
 exceptions = [
   # Each entry is the crate and version constraint, and its specific allow
   # list
-  { allow = ["Zlib"], name = "const_format", version = "*" },
-  { allow = ["Zlib"], name = "const_format_proc_macros", version = "*" },
-  { allow = ["Zlib"], name = "foldhash", version = "*" },
-  { allow = ["CC0-1.0"], name = "notify", version = "*" },
-  { allow = ["BSD-2-Clause"], name = "syscalls", version = "*" },
 ]
 
 # Some crates don't have (easily) machine readable licensing information,
