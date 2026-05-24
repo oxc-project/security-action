@@ -47,7 +47,7 @@ runs:
         EVENT_NAME: ${{ github.event_name }}
         PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
 
-    - uses: taiki-e/install-action@7be9fd86bd1707236395105d6e9329dd1511a7e1 # v2.79.0
+    - uses: taiki-e/install-action@f48d2f8ba2b452934c948b7be1a768079c3632ff # v2.79.6
       with:
         tool: zizmor@1.24.1
 
@@ -55,7 +55,7 @@ runs:
       shell: bash
       run: zizmor --config "${{ github.action_path }}/zizmor.yml" --strict-collection --show-audit-urls=always --min-severity=medium .
 
-    - uses: taiki-e/install-action@7be9fd86bd1707236395105d6e9329dd1511a7e1 # v2.79.0
+    - uses: taiki-e/install-action@f48d2f8ba2b452934c948b7be1a768079c3632ff # v2.79.6
       if: ${{ steps.cargo_lock.outputs.changed == 'true' }}
       with:
         tool: cargo-deny
