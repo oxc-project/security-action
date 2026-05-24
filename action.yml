@@ -10,7 +10,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: taiki-e/checkout-action@eec95f3ac3fe36ac9511ca66ba6c1a10b361a2da # main
+    - uses: taiki-e/checkout-action@40cfbad5395e0a32bad8f9e55d4c10a10e75a755 # main
       with:
         token: ${{ inputs.token }}
 
