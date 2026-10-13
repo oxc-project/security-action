@@ -6,7 +6,7 @@ Run security checks against the current repository. The current check set includ
 
 This action checks out the repository internally and runs the configured security checks. Today, that includes `zizmor --config "${{ github.action_path }}/zizmor.yml" --strict-collection --show-audit-urls=always --min-severity=medium .`, so the job fails on collection errors and on medium-severity or higher findings.
 
-If the checked-out repository has `Cargo.lock` and the current pull request or push diff changes it, the action also installs `cargo-deny` and runs `cargo deny check --config "${{ github.action_path }}/deny.toml"`.
+If the checked-out repository has `Cargo.lock` and the current pull request or push diff changes it, the action also installs `cargo-deny` 0.20.2 and runs `cargo deny --config "${{ github.action_path }}/deny.toml" check`.
 
 ## Configuration
 
