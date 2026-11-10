@@ -23,6 +23,8 @@ rules:
 
 The cargo-deny check passes its bundled config file at `${{ github.action_path }}/deny.toml` to `cargo-deny`.
 
+The license policy allows `Apache-2.0 WITH LLVM-exception` and skips license checks for unpublished workspace crates (`publish = false`). Dependencies are still checked.
+
 # [Sponsored By](https://oxc.rs/sponsor)
 
 <p align="center">
